@@ -2,9 +2,17 @@
 # 1) Load workpiece graph and feature graph data from  json file
 # ##################################################
 
+import json
+import networkx as nx
+from networkx.algorithms import isomorphism
+
 # Note: Available files are: workpiece_graph.json, feature_graph.json
 
 # TODO
+with open("workpiece_graph.json", "r") as wpfile:
+    workpiece_graph = json.load(wpfile)
+with open("feature_graph.json", "r") as fgfile:
+    feature_graph = json.load(fgfile)
 
 # ##################################################
 # 2) Create graphs from loaded data
