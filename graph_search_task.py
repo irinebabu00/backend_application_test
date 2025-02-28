@@ -34,12 +34,13 @@ def construct_graph(graph_data):
 workpiece_graph_new = construct_graph(workpiece_graph)
 feature_graph_new = construct_graph(feature_graph)
 
-# Note: Optional task - Visualize the graph
-# Example code:
-# from pyvis.network import Network
-# nt = Network()
-# nt.from_nx(workpiece_graph)
-# nt.show("graph.html", notebook=False)
+from pyvis.network import Network
+nt = Network()
+nt.from_nx(workpiece_graph_new)
+nt.show("workpiece_graph_new.html", notebook=False)
+nt = Network()
+nt.from_nx(feature_graph_new)
+nt.show("feature_graph_new.html", notebook=False)
 
 # ##################################################
 # 3) Check if the feature graph is a subgraph of the workpiece workpiece and find any other matching subgraphs
