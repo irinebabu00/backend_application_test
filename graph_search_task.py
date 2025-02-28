@@ -48,6 +48,14 @@ nt.show("feature_graph_new.html", notebook=False)
 
 
 # TODO
+GM_similar = isomorphism.GraphMatcher(
+    workpiece_graph_new, 
+    feature_graph_new, 
+    node_match=isomorphism.categorical_node_match("type", None)  # Ignore other attributes
+)
+
+is_similar_subgraph = GM_similar.subgraph_is_isomorphic()
+similar_matches = list(GM_similar.subgraph_isomorphisms_iter())
 
 # ##################################################
 # 4) Results
