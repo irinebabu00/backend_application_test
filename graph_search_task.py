@@ -64,3 +64,11 @@ similar_matches = list(GM_similar.subgraph_isomorphisms_iter())
 # Print results if matches are found. Return the number of matches and the node ids.
 
 # TODO
+if is_similar_subgraph:
+    print("The feature graph is a subgraph of the workpiece graph!")
+    print(f"Number of matches found: {len(similar_matches)}")
+    print("\nMatching node mappings (Feature → Workpiece):")
+    for i, match in enumerate(similar_matches):
+        print(f"Match {i+1}: {match}")
+else:
+    print("The feature graph is NOT a subgraph of the workpiece graph.")
